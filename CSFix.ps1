@@ -5,7 +5,8 @@ Write-Output "======================"
 $drive = $env:SystemDrive
 $directoryPath = "$($drive)\Windows\System32\drivers\CrowdStrike"
 $filePattern = "C-00000291*.sys"
-$logFilePath = "$($drive)\Temp\script_log.txt"
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$logFilePath = "$($drive)\Temp\csfix_script_log_$timestamp.txt"
 
 # Check if the Temp directory exists, create it if not
 if (-Not (Test-Path "$($drive)\Temp")) {
